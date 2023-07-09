@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.main {
+    position: relative;
+}
+
+.container {
+    background: rgb(49, 177, 248);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.menu {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    position: relative;
+}
+
+.background-menu {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    position: absolute;
+    transition: 0.3s ease-in;
+}
+
+.icon1,
+.icon2 {
+    color: rgb(49, 177, 248);
+    font-size: 22px;
+    z-index: 1;
+    position: absolute;
+    margin: 25px;
+}
+
+.content {
+    position: absolute;
+    right: 200px;
+    text-align: right;
+    color: white;
+    bottom: 50%
+}
+
+.header {
+    font-size: 50px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.content>p {
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content p>span {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px 90px 5px 50px;
+
+}
+
+.hidden-menu {
+    /* display: none; */
+    position: absolute;
+    top: 80px;
+}
+
+.menu-item {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.hidden-menu .menu-item {
+    margin-bottom: 20px;
+
+}
+
+.menu-item:hover a {
+    color: black;
+    background-color: rgba(128, 128, 128, 0.464);
+}
+
+input {
+    display: none;
+}
+
+.check:checked~.background-menu {
+    width: calc(100vw + 100px);
+    height: calc(100vh + 100px);
+    border-radius: 0;
+}
+
+.check:checked~.hidden-menu .menu-item {
+    display: block;
+}
+
+.icon2 {
+    display: none;
+}
+
+.check:checked~.icon .icon2 {
+    display: block;
+}
+
+.check:checked~.icon .icon1 {
+    display: none;
+}
+
+@keyframes icon1 {
+    from {
+        rotate: 0;
+    }
+
+    to {
+        rotate: 180deg;
+    }
+}
+
+@keyframes icon2 {
+    from {
+        rotate: -90deg;
+    }
+
+    to {
+        rotate: 0;
+    }
+}
+
+.icon1 {
+    animation: icon1 0.2s linear;
+}
+
+.icon2 {
+    animation: icon2 0.2s linear;
+}
